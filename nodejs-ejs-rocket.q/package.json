@@ -1,0 +1,22 @@
+{
+  "name": "Rocket.Q",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "nodemon src/server.js",
+    "init-db": "node src/db/init.js"
+  },
+  "keywords": [],
+  "author": "Luís Gabriel Marchio Batista",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

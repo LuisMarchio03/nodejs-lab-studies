@@ -1,0 +1,30 @@
+{
+  "name": "dev-challenge-blog-geek",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "api": "yarn workspace @dev-challenge-blog-geek/api run dev",
+    "web": "yarn workspace @dev-challenge-blog-geek/web run dev",
+    "web-build": "yarn workspace @dev-challenge-blog-geek/web run build",
+    "web-start": "yarn workspace @dev-challenge-blog-geek/web run start",
+    "admin": "yarn workspace @dev-challenge-blog-geek/admin run dev",
+    "admin-build": "yarn workspace @dev-challenge-blog-geek/admin run build",
+    "admin-start": "yarn workspace @dev-challenge-blog-geek/admin run start"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/shared/*"
+    ]
+  },
+  "repository": "git@github.com:LuisMarchio03/dev-challenge-blog-geek.git",
+  "author": "LuisMarchio03 <luisgabrielmarchio75@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "jest": "^27.2.2",
+    "ts-jest": "^27.0.5"
+  }
+}

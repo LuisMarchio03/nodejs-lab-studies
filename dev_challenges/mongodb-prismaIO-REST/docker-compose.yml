@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  mongo-database:
+    image: mongo
+    ports:
+      - "8888:5432"
+    container_name: "db-mongo-marketplace"
+    restart: always
+    volumes:
+      - ./db-mongo-marketplace:/var/lib/mongo/data
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+
+volumes:
+  data-mongo-marketplace:

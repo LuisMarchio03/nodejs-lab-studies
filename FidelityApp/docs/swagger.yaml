@@ -1,0 +1,1176 @@
+definitions:
+  github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse:
+    properties:
+      errorCode:
+        type: string
+      message:
+        type: string
+    type: object
+  handler.CreateCardFidelityRequest:
+    properties:
+      companyId:
+        type: integer
+      finished:
+        type: boolean
+      totalPoints:
+        type: integer
+      userId:
+        type: integer
+    type: object
+  handler.CreateCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
+      message:
+        type: string
+    type: object
+  handler.CreateCompanyRequest:
+    properties:
+      address:
+        type: string
+      addressCity:
+        type: string
+      addressComplement:
+        type: string
+      addressNumber:
+        type: string
+      addressState:
+        type: string
+      addressZipCode:
+        type: string
+      cnpj:
+        type: string
+      name:
+        type: string
+    type: object
+  handler.CreateCompanyResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.CreatePointRequest:
+    properties:
+      cardFidelityId:
+        type: integer
+    type: object
+  handler.CreatePointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
+  handler.CreateUserRequest:
+    properties:
+      address:
+        type: string
+      companyId:
+        type: integer
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+    type: object
+  handler.CreateUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
+      message:
+        type: string
+    type: object
+  handler.DeleteCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
+      message:
+        type: string
+    type: object
+  handler.DeleteCompanyResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.DeletePointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
+  handler.DeleteUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
+      message:
+        type: string
+    type: object
+  handler.ListCardFidelitiesResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.CardFidelityResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.ListCompaniesResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.CompanyResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.ListPointsResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.PointResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.ListUsersResponse:
+    properties:
+      data:
+        items:
+          $ref: '#/definitions/schemas.UserResponse'
+        type: array
+      message:
+        type: string
+    type: object
+  handler.LoginUserRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  handler.LoginUserResponse:
+    properties:
+      message:
+        type: string
+      token:
+        type: string
+    type: object
+  handler.RecoveryPasswordRequest:
+    properties:
+      code:
+        type: string
+      new_password:
+        type: string
+      password:
+        type: string
+      password_confirm:
+        type: string
+    type: object
+  handler.RecoveryPasswordResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  handler.SendCodeForMailRequest:
+    properties:
+      email:
+        type: string
+    type: object
+  handler.SendCodeForMailResponse:
+    properties:
+      message:
+        type: string
+    type: object
+  handler.ShowCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
+      message:
+        type: string
+    type: object
+  handler.ShowCompanyResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.ShowPointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
+  handler.ShowUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdateCardFidelityRequest:
+    properties:
+      companyId:
+        type: integer
+      finished:
+        type: boolean
+      totalPoints:
+        type: integer
+      userId:
+        type: integer
+    type: object
+  handler.UpdateCardFidelityResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CardFidelityResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdateCompanyRequest:
+    properties:
+      address:
+        type: string
+      addressCity:
+        type: string
+      addressComplement:
+        type: string
+      addressNumber:
+        type: string
+      addressState:
+        type: string
+      addressZipCode:
+        type: string
+      cnpj:
+        type: string
+      name:
+        type: string
+    type: object
+  handler.UpdateCompanyResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.CompanyResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdatePointRequest:
+    properties:
+      cardFidelityId:
+        type: integer
+    type: object
+  handler.UpdatePointResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.PointResponse'
+      message:
+        type: string
+    type: object
+  handler.UpdateUserRequest:
+    properties:
+      address:
+        type: string
+      companyId:
+        type: integer
+      email:
+        type: string
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+    type: object
+  handler.UpdateUserResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.UserResponse'
+      message:
+        type: string
+    type: object
+  schemas.CardFidelityResponse:
+    properties:
+      companyId:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      finished:
+        type: boolean
+      point:
+        items:
+          $ref: '#/definitions/schemas.PointResponse'
+        type: array
+      totalPoints:
+        type: integer
+      updatedAt:
+        type: string
+      userId:
+        type: integer
+    type: object
+  schemas.CompanyResponse:
+    properties:
+      address:
+        type: string
+      addressCity:
+        type: string
+      addressComplement:
+        type: string
+      addressNumber:
+        type: string
+      addressState:
+        type: string
+      addressZipCode:
+        type: string
+      cnpj:
+        type: string
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+      users:
+        items:
+          $ref: '#/definitions/schemas.UserResponse'
+        type: array
+    type: object
+  schemas.PointResponse:
+    properties:
+      cardFidelityId:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      id:
+        type: integer
+      point:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+  schemas.UserResponse:
+    properties:
+      address:
+        type: string
+      code:
+        type: string
+      companyId:
+        type: integer
+      createdAt:
+        type: string
+      deletedAt:
+        type: string
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      password:
+        type: string
+      phone:
+        type: string
+      type:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /auth/recovery-password:
+    post:
+      consumes:
+      - application/json
+      description: Recovery Password
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.RecoveryPasswordRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.RecoveryPasswordResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Recovery Password
+      tags:
+      - Auth
+  /auth/send-code-for-mail:
+    post:
+      consumes:
+      - application/json
+      description: Send Code For Mail
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.SendCodeForMailRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.SendCodeForMailResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Send Code For Mail
+      tags:
+      - Auth
+  /cardFidelities:
+    get:
+      consumes:
+      - application/json
+      description: List all CardFidelities
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListCardFidelitiesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: List CardFidelities
+      tags:
+      - CardFidelity
+  /cardFidelity:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a cardFidelity
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: CardFidelity identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeleteCardFidelityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete CardFidelity
+      tags:
+      - CardFidelity
+    get:
+      consumes:
+      - application/json
+      description: Show a cardFidelity
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: CardFidelity identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowCardFidelityResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Show CardFidelity
+      tags:
+      - CardFidelity
+    post:
+      consumes:
+      - application/json
+      description: Create a new cardFidelity
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateCardFidelityRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreateCardFidelityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Create CardFidelity
+      tags:
+      - CardFidelity
+    put:
+      consumes:
+      - application/json
+      description: Update a new cardFidelity
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: CardFidelity identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateCardFidelityRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdateCardFidelityResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_cardFidelity.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update CardFidelity
+      tags:
+      - CardFidelity
+  /companies:
+    get:
+      consumes:
+      - application/json
+      description: List all Companies
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListCompaniesResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: List Companies
+      tags:
+      - Company
+  /company:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a company
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Company identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeleteCompanyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Company
+      tags:
+      - Company
+    get:
+      consumes:
+      - application/json
+      description: Show a company
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Company identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowCompanyResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Show Company
+      tags:
+      - Company
+    post:
+      consumes:
+      - application/json
+      description: Create a new company
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateCompanyRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreateCompanyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Company
+      tags:
+      - Company
+    put:
+      consumes:
+      - application/json
+      description: Update a new company
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Company identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateCompanyRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdateCompanyResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_company.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update Company
+      tags:
+      - Company
+  /login:
+    post:
+      consumes:
+      - application/json
+      description: Login a user
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.LoginUserRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.LoginUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Login User
+      tags:
+      - Auth
+  /point:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a point
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Point identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeletePointResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete Point
+      tags:
+      - Point
+    get:
+      consumes:
+      - application/json
+      description: Show a point
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Point identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowPointResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Show Point
+      tags:
+      - Point
+    post:
+      consumes:
+      - application/json
+      description: Create a new point
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreatePointRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreatePointResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Create Point
+      tags:
+      - Point
+    put:
+      consumes:
+      - application/json
+      description: Update a new point
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: Point identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdatePointRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdatePointResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update Point
+      tags:
+      - Point
+  /points:
+    get:
+      consumes:
+      - application/json
+      description: List all Points
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListPointsResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_point.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: List Points
+      tags:
+      - Point
+  /user:
+    delete:
+      consumes:
+      - application/json
+      description: Delete a user
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: User identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.DeleteUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Delete User
+      tags:
+      - User
+    get:
+      consumes:
+      - application/json
+      description: Show a user
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: User identification
+        in: query
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowUserResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Show User
+      tags:
+      - User
+    post:
+      consumes:
+      - application/json
+      description: Create a new user
+      parameters:
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.CreateUserRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.CreateUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      summary: Create User
+      tags:
+      - User
+    put:
+      consumes:
+      - application/json
+      description: Update a new user
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      - description: User identification
+        in: query
+        name: id
+        required: true
+        type: string
+      - description: Request body
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/handler.UpdateUserRequest'
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/handler.UpdateUserResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Update User
+      tags:
+      - User
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: List all Users
+      parameters:
+      - description: Authorization
+        in: header
+        name: Authorization
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ListUsersResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/github_com_LuisMarchio03_acim-backend_handler_user.ErrorResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: List Users
+      tags:
+      - User
+swagger: "2.0"

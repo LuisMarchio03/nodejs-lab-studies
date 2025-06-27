@@ -1,0 +1,34 @@
+app: serverless-youtube
+service: serverless-youtube
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  create-user:
+    handler: src/modules/user/lambdas/create-user.handler
+    events:
+      - httpApi:
+          path: /users
+          method: post
+  wallet-get:
+    handler: src/modules/user/lambdas/get-wallet.handler
+    events:
+      - httpApi:
+          path: /users/{id}/wallet
+          method: get
+  consumer:
+    handler: src/modules/user/lambdas/consumer.handler
+    events:
+      - schedule:
+          rate: rate(1 minute)
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+          
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline

@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  pgsql-prisma:
+    image: postgres:alpine
+    ports:
+      - "5440:5432"
+    container_name: pgsql-prisma
+    restart: always
+    volumes:
+      - ./data-prisma-pg:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: pguser
+      POSTGRES_PASSWORD: pgpassword
+
+volumes:
+  data-prisma-pg:

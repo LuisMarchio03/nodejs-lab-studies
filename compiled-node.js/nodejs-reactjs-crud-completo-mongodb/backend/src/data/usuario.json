@@ -1,0 +1,22 @@
+[
+  {
+    "nome": "Silvio Luis",
+    "email": "silvio@teste.com",
+    "senha": "12"
+  },
+  {
+    "nome": "Luís Gabriel",
+    "email": "luisgabriel@teste.com",
+    "senha": "34"
+  },
+  {
+    "nome": "Luís Marchió",
+    "email": "marchio@teste.com",
+    "senha": "56"
+  },
+  {
+    "nome": "Gabriel Batista",
+    "email": "batista@teste.com",
+    "senha": "78"
+  }
+]

@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+  # Application
+
+  db-admin-server-view-feedback:
+    image: "bitnami/postgresql"
+    ports:
+      - "5438:5432"
+    environment:
+      - POSTGRESQL_USERNAME=admin
+      - POSTGRESQL_PASSWORD=admin
+      - POSTGRESQL_DATABASE=admin
+    volumes:
+      - "postgresql_data_admin:/bitnami/postgresql"
+
+  db-admin-server-view-feedback-test:
+    image: "bitnami/postgresql"
+    ports:
+      - "5444:5432"
+    environment:
+      - POSTGRESQL_USERNAME=test
+      - POSTGRESQL_PASSWORD=test
+      - POSTGRESQL_DATABASE=test
+    volumes:
+      - "postgresql_data_admin_test:/bitnami/postgresql"
+
+  db-server-feedget:
+    image: "bitnami/postgresql"
+    ports:
+      - "5439:5432"
+    environment:
+      - POSTGRESQL_USERNAME=feedget
+      - POSTGRESQL_PASSWORD=feedget
+      - POSTGRESQL_DATABASE=feedget
+    volumes:
+      - "postgresql_data_feedget:/bitnami/postgresql"
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: "rabbitmq"
+    ports:
+      - 5672:5672
+      - 15672:15672
+
+volumes:
+  postgresql_data_admin:
+    driver: local
+  postgresql_data_feedget:
+    driver: local
+  postgresql_data_admin_test:
+    driver: local

@@ -28,5 +28,7 @@ export class TransactionService {
 
         await this.userRepository.updateUserBalance(sender);
         await this.userRepository.updateUserBalance(receiver);
+
+        await this.transactionRepository.createTransaction(amount, senderId, receiverId);
     }
 }

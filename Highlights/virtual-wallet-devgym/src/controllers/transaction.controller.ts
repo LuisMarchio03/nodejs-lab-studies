@@ -1,5 +1,6 @@
-import { BadRequest } from "../exceptions/bad-request";
+import { Exceptions } from "../exceptions";
 import { ITransactionService } from "../services/transaction.service";
+import { Response, Request } from 'express';
 
 
 interface ITransaction {
@@ -16,34 +17,48 @@ export class TransactionController {
     }
 
     public async send(request: Request, response: Response) {
-       const transaction = request.body as unknown as ITransaction;
+        const transaction = request.body as ITransaction;
 
         const { amount, sender, receiver } = transaction;
 
-        if (amount === null || amount === undefined) {
-            return new BadRequest("Amount must be defined");
-        }
-        
-        if (amount < 0) {
-            return new BadRequest("Amount must be positive");
-        }
+        try {
+            if (amount === null || amount === undefined) {
+                const exceptions = new Exceptions("Amount must be defined", 400);
+                return exceptions.handle(response);
+            }
 
-        if (sender === receiver) {
-            return new BadRequest("Sender and receiver must be different");
-        }
+            if (amount < 0) {
+                const exceptions = new Exceptions("Amount must be greater than 0", 400);
+                return exceptions.handle(response);
+            }
 
-        if (sender === null || receiver === null) {
-            return new BadRequest("Sender and receiver must be defined");
-        }
+            if (sender === receiver) {
+                const exceptions = new Exceptions("Sender and receiver must be different", 400);
+                return exceptions.handle(response);
+            }
 
-        if (sender === undefined || receiver === undefined) {
-            return new BadRequest("Sender and receiver must be defined");
-        }
+            if (sender === null || receiver === null) {
+                const exceptions = new Exceptions("Sender and receiver must be defined", 400);
+                return exceptions.handle(response);
+            }
 
-        if (sender === "" || receiver === "") {
-            return new BadRequest("Sender and receiver must be defined");
+            if (sender === undefined || receiver === undefined) {
+                const exceptions = new Exceptions("Sender and receiver must be defined", 400);
+                return exceptions.handle(response);
+            }
+
+            if (sender === "" || receiver === "") {
+                const exceptions = new Exceptions("Sender and receiver must be defined", 400);
+                return exceptions.handle(response);
+            }
+
+            await this.transactionService.send(amount, sender, receiver);
+
+            return response.status(200).send({ message: "Transaction sent" });
         }
-        
-        await this.transactionService.send(amount, sender, receiver);
+        catch (error) {
+            const exceptions = new Exceptions("Internal Server error", 500);
+            return exceptions.handle(response);
+        }
     }
 }

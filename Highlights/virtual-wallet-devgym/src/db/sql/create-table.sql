@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS `users` (
+    `id` VARCHAR(255) NOT NULL PRIMARY KEY,
+    `username` VARCHAR(255) NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
+    `balance` DECIMAL(10, 2) NOT NULL DEFAULT 0,    
+)
+
+CREATE TABLE IF NOT EXISTS `transactions` (
+    `id` VARCHAR(255) NOT NULL PRIMARY KEY,
+    `senderId` VARCHAR(255) NOT NULL REFERENCES `users`(`id`),
+    `receiverId` VARCHAR(255) NOT NULL REFERENCES `users`(`id`),
+    `createdAt` DATETIME NOT NULL CURRENT_TIMESTAMP,
+    `updatedAt` DATETIME NOT NULL CURRENT_TIMESTAMP,
+    `amount` DECIMAL(10, 2) NOT NULL,
+)
